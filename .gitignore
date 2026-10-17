@@ -1,0 +1,38 @@
+# Python and build outputs
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# Credentials and local machine configuration
+.env
+.env.*
+!.env.example
+*.local.yaml
+*.local.yml
+*.local.json
+*.secret.*
+secrets/
+credentials/
+
+# Local runtime data
+logs/
+data/
+*.log
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
