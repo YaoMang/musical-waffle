@@ -1,18 +1,24 @@
-## Summary
+## Promotion-only PR
 
-Explain the proposed change and motivation.
+**Public main accepts only approved content from the private pre-public gate.**
+Direct external/fork PRs are proposals only and cannot merge as-is.
 
-## Validation
+### Approved pre-public source
 
-Describe tests, environment, and whether any robot hardware was involved.
-Do not report simulated tests as proof of physical safety.
+- Pre-public approved commit SHA:
+- Candidate / review record:
+- Approved file allowlist and SHA-256/Git blob hashes:
+- Public branch diff review:
 
-## License and provenance
+### Required release checks
 
-- [ ] I have the right to contribute this code and have identified third-party material.
-- [ ] This PR contains no secrets, confidential data, or unapproved vendor SDK files.
-- [ ] I understand that an **executed project-approved CLA** is required before
-      an external PR may be merged into the official repository.
+- [ ] Maintainer has verified approval of this exact pre-public snapshot
+- [ ] Export contains only approved content; private history was not copied
+- [ ] Public content digests match the approved candidate
+- [ ] LGPL/third-party license notices and external contribution CLA verified
+- [ ] Secret/privacy scan and standalone build/tests completed or exceptions documented
+- [ ] Hardware-motion safety claims are supported by real test evidence
+- [ ] Maintainer review and repository protections satisfied
 
-> The checkbox is **not** a signed CLA. The CLA signing process is pending;
-> maintainers will not merge external PRs before the executed grant is verified.
+**These self-declarations are not technical verification.** Required trusted
+provenance CI and public-main protections remain to be implemented.

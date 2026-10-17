@@ -1,48 +1,34 @@
-# Contributing
+# Contributions and external proposals
 
-Thank you for your interest. This repository contains independently published
-open-source source snapshots, not the primary internal development source.
+The official public `main` branch is a release destination, **not an
+independent development branch**. It accepts only exact, reviewed source
+snapshots from the private pre-public staging gate.
 
-## License of published code
+## How to propose a change
 
-The original code released here is licensed under **LGPL-3.0-or-later**.
-All contributions merged and published in this repository must be appropriately
-licensed for inclusion under LGPL-3.0-or-later. Third-party material may need
-separate licensing and attribution.
+You may open a GitHub Issue to propose a bug fix or feature. Independently
+maintained LGPL forks remain free to develop and distribute modifications.
+An unsolicited public pull request can be discussed as a **proposal**, but
+will **not be merged directly** into this repository's `main`.
 
-## Official pull-request acceptance
+To incorporate external code, the maintainer must first verify rights,
+obtain a **signed and project-accepted Harmony CLA Option Five-style
+agreement**, then adopt the contribution into the private primary
+development source. It can reach the official public edition only through
+pre-public review and a maintainer-controlled promotion PR.
 
-**Before an external contribution can be merged into the official repository,
-its rights holder(s) must execute a project-approved Contributor License
-Agreement (CLA).** The intended standard is a **Harmony CLA, Option Five**
-style grant, permitting the project maintainer to use and relicense the
-contribution under open-source and proprietary terms. Contributors retain their
-copyrights; a copyright assignment is not required.
+Contributors **retain copyright**; the CLA is a broad additional license
+allowing open-source and proprietary reuse by the project maintainers.
+The LGPL rights of public recipients are unchanged. **The CLA signing
+and verification process is not operational yet**, so external code is
+not currently accepted for official incorporation.
 
-**Signing/onboarding and CLA automation are not yet available. External PRs must
-not be merged until a formally adopted CLA and verification process is in place.**
-An unchecked PR template checkbox does not constitute a signed CLA. The final
-legal recipient, individual/entity forms, signature record, and verification
-process must be established before activating contributions.
+See [CLA policy](docs/cla-policy.md) and [governance](docs/governance.md).
 
-See [CLA policy](docs/cla-policy.md).
+## License provenance
 
-## What to include in a PR
-
-- A focused explanation of the intended change and any relevant tests.
-- Confirmation that the contribution is your own work, or that you have all
-  necessary rights to submit it.
-- Identification and license provenance of any third-party source.
-- No confidential data, credentials, vendor SDK bundles, or unsafe
-  robot-control examples.
-- No assumption that a PR is accepted merely because it is technically correct.
-
-Maintainers retain full discretion over the official project's scope,
-priorities, and merge decisions. Third-party forks may freely modify and
-redistribute this project as permitted by the LGPL, without signing our CLA
-unless they seek a merge into the official repository.
-
-## First implementation scope
-
-Initially target FAIRINO FR5, Python SDK v2.2.8 / robot v3.9.8. The library
-is still being initialized and has no validated hardware-control code.
+Do not propose code that you lack authority to license, nor include secrets,
+customer information, unapproved third-party material, vendor SDK bundles,
+or unsafe machine-specific motion instructions. The maintainer has discretion
+over the official scope and merge decisions. You do not need to sign a CLA
+to make or distribute an independent LGPL fork.

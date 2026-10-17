@@ -1,17 +1,24 @@
-# Public release checklist
+# Public-only-from-pre-public release checklist
 
-1. Receive a **selected content-only snapshot** from the private development
-   source; never copy the private Git history.
-2. Review the exact public diff and all provenance, third-party licenses,
-   notices, secrets, device-specific configuration, and internal paths.
-3. Confirm release code can build and function without unreleased proprietary
-   source. Verify tests and document any hardware verification limitations.
-4. Verify all external contributions have been properly licensed and accepted
-   with the required CLA before incorporation into the private source.
-5. Update CHANGELOG/release notes and choose version/tag only when functionality
-   is ready; avoid implying FR5 hardware validation without real tests.
-6. Review through a maintainer-controlled PR before merging to protected main.
-7. Record cross-repository provenance in internal records, without exposing
-   sensitive private revision details unnecessarily.
+No public `main` merge may bypass the pre-public approval gate.
 
-This file establishes a policy, not an automated release pipeline.
+1. Obtain an **approved** pre-public candidate commit SHA, allowlisted file
+   inventory, rights/attribution review, test output, and file hashes.
+2. Confirm candidate changes contain no confidential proprietary code,
+   secrets, vendor SDK bundles, device secrets, sensitive logs, or private
+   Git history. Check independent buildability and honest safety claims.
+3. Create a **new branch inside this public repository** from current
+   public `main`, populated by a **content-only export** of that exact
+   pre-public candidate; a separate private repository cannot usually
+   be a direct public PR head.
+4. Match exported content hashes against the approved pre-public snapshot.
+   Review deletions and renames as well as added and changed files.
+5. Open a maintainer-controlled PR. Record pre-public commit SHA and
+   release review identifier; apply required approval, provenance and CI
+   checks **once configured**. Do not merge directly from a fork PR or by
+   unreviewed direct pushes.
+6. After successful review, merge PR, then tag/release from public `main`.
+7. Retain provenance and public SHA in the private internal release log.
+
+No production promotion credentials, required checks, or protected-branch
+rules are configured by this document alone.

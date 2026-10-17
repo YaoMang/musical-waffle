@@ -1,40 +1,37 @@
 # External contribution policy
 
+The official public distribution accepts **only approved private pre-public
+snapshots**, not direct external PR merges. External patches considered for
+inclusion must first be adopted into the private development source after
+appropriate rights verification and a signed project-approved contributor
+agreement. They then pass through pre-public and public promotion.
+
 ## Intended agreement
 
-Use a **Harmony Contributor License Agreement (CLA), Option Five** based
-arrangement. The objective is a **broad non-exclusive grant**, not copyright
-assignment: contributors keep copyright, and the official maintainer receives
-sufficient copyright and appropriate patent permissions to modify, combine,
-sublicense, and distribute contributed code under open-source, commercial,
-and proprietary licenses.
+A **Harmony Contributor License Agreement (CLA), Option Five** style
+grant: contributors retain copyright but grant the maintainer broad
+copyright and appropriate patent rights to use, modify, combine, sublicense,
+and distribute their work under LGPL, other open-source, commercial, and
+proprietary terms.
 
-Reference template:
-https://selector.harmonyagreements.org/agreements
+Template references:
+- https://selector.harmonyagreements.org/agreements
+- https://selector.harmonyagreements.org/docs/ha-combined-v1
 
-Reference text:
-https://selector.harmonyagreements.org/docs/ha-combined-v1
+Recipients of published LGPL copies retain their LGPL rights; third-party
+forks need no CLA to develop or distribute under the public license.
 
-The LGPL rights associated with publicly published versions remain available
-to recipients. No external contributor is forced to submit modifications to
-this official repository; independent forks are governed by the public license.
+## Not yet operational
 
-## Status — not yet operational
+The policy is **not** a signed CLA. Before incorporating external code:
 
-This file describes **intended policy** and is **not itself an executed CLA**.
-Before accepting external pull requests into `main`, maintainers must:
+1. Identify the legal person/entity that will receive contributor rights.
+2. Finalize Individual and Entity agreement text and review legal terms.
+3. Configure signatures and durable verification/audit records.
+4. Verify contributor authority, ownership, employer rights, and third-party
+   material provenance.
+5. Configure and require appropriate status checks and maintainer review
+   on official promotion branches.
 
-1. Set the legal name/identity of the CLA licensee and applicable terms.
-2. Select and review individual and legal-entity contribution forms.
-3. Arrange electronic signature or another legally adequate consent workflow
-   with audit records.
-4. Configure a required automated or manual CLA-verification check and an
-   approval rule in GitHub.
-5. Confirm contributors' legal authority, including employer ownership where
-   applicable. Review third-party source provenance separately.
-
-No check-box-only consent should be treated as a substitute for a legally
-sufficient executed agreement. Legal review of adopted terms is recommended.
-
-Maintainers may discuss or review unsolicited patches, but must **not merge**
-external contributions before the necessary license grant has been confirmed.
+A PR template checkbox is not an executed CLA. No external code can be
+officially incorporated until these steps are completed.
