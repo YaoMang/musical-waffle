@@ -1,27 +1,48 @@
 # Robot Motion Control — public edition
 
-A Python robot-motion control library under development. This repository hosts **selected open-source releases** from a private development source; it is **not** an automatic mirror.
+A Python robot-motion control library under development. The official public
+repository contains only source snapshots that have passed a separate,
+maintainer-controlled pre-public review process.
 
 ## Status and scope
 
-**Pre-implementation / initial repository setup.** No robot hardware control functionality has been released or verified yet.
+**Pre-implementation.** No hardware-control functionality has been released
+or verified yet. Initial planned target: **FAIRINO FR5**, **FAIRINO Python
+SDK v2.2.8**, controller **v3.9.8**. Interfaces may later support other
+SDK versions and robot vendors, without committing to implementations now.
 
-The first planned target is the **FAIRINO FR5** with **FAIRINO Python SDK v2.2.8** (robot controller **v3.9.8**). We intend to keep the architecture open to other SDK versions and robot vendors, without claiming support before it has been implemented and tested.
+The future library will be usable independently of sar-acq, which is only
+one potential downstream application.
 
-Applications (including sar-acq) should be able to depend on this library without importing a vendor SDK directly. The precise public control API is not yet finalized.
+## Publication model
 
-## Licensing
+```text
+Private development → Private pre-public review → Public release PR → Public main
+```
 
-Our original code **published in this repository** is licensed under **GNU LGPL version 3 or later**; see [LICENSE](LICENSE). Source code not published here is **not** made available or licensed by this repository.
+**Only exact snapshots approved by the pre-public review gate may be merged
+into public main.** The maintainers do not directly merge external/fork PRs to
+public main. External proposals can be considered for inclusion through
+the private development and pre-public review process.
 
-The FAIRINO Python SDK is a separate upstream project under **Apache-2.0**; it is not bundled here. Obtain and license it separately if needed. See [third-party dependencies](THIRD_PARTY.md).
+The public PR uses an internal promotion branch carrying source *contents*
+from the approved private pre-public snapshot; private commit history is
+never published. GitHub branch protections and automated verification are
+not yet configured, so this is presently a documented maintainer policy.
 
-## Contributions
+See [governance](docs/governance.md), [releasing](docs/releasing.md),
+and [contributing](CONTRIBUTING.md).
 
-External pull requests require an executed, project-accepted **Contributor License Agreement** with broad outbound relicensing permissions, based on **Harmony CLA — Option Five**, before merge. **CLA signing and automated checks have not yet been configured**, so maintainers will not merge external PRs until that process is operational. Contributors retain their copyrights; third-party forks remain free to operate under the LGPL.
+## License
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) and [project governance](docs/governance.md). Maintainers decide whether to accept contributions into the official repository.
+Original published code is **GNU LGPL-3.0-or-later**; see [LICENSE](LICENSE).
+The LGPL license does not automatically cover unpublished proprietary source.
+The FAIRINO SDK is a separate project licensed under **Apache-2.0**, and is
+not bundled here; see [THIRD_PARTY.md](THIRD_PARTY.md).
 
 ## Safety
 
-Robot movement can cause injury or property damage. Examples and libraries here are not substitutes for manufacturer safety guidance, risk assessment, protective equipment, or a functional emergency stop. No hardware functionality has been validated at this initial stage.
+Physical robot motion can injure people or damage equipment. Follow manufacturer
+instructions, qualified risk assessment, hardware protective measures and
+emergency-stop procedures. No real-world motion control has been validated in
+this initial repository state.

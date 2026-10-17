@@ -1,34 +1,46 @@
-# Project governance and release model
+# Governance and release provenance
 
-## Maintainer control
+## Official repository control
 
-The official repository is maintained by `YaoMang`. The maintainer controls
-roadmap, releases, accepted contributions, and merges. A public LGPL license
-protects downstream recipients' freedoms but does not confer merge access to
-this official repository.
+The `YaoMang` maintainer determines roadmap, accepted contributions,
+licensing of its own code, and official public releases. LGPL licenses allow
+others to use, modify, and fork public code; they do not confer a right
+to merge into the official repository.
 
-External pull requests require a separately executed broad-relicensing CLA
-before merge. This requirement **does not apply to independent forks**.
+## Three-stage repository model
 
-## Development source and public release
+1. **Primary private development source**: code development and proprietary
+   internals; private history and unreleased modules stay private.
+2. **Private pre-public gate**: only explicitly selected, publishable source
+   content is staged; provenance, license, security, tests, and safety claims
+   are reviewed.
+3. **Official public distribution**: only an approved pre-public content
+   snapshot is imported into a promotion branch, reviewed through a public
+   PR, and merged into `main`.
 
-Development takes place first in a **separate private source repository**.
-This public repository receives selected, reviewed **content snapshots** as
-new commits; it is not an automated Git mirror. The private source and any
-unreleased code remain proprietary unless separately licensed.
+No private repository history, vendor SDK bundles, or confidential files
+should be present in public releases. Pre-public is an approval source,
+not an automatic synchronization mirror.
 
-Public releases must not contain private Git history, secrets, internal
-configuration, unapproved files, or proprietary vendor SDK material.
-Maintainers check license provenance and tests before each public release.
+A direct public fork PR is not merged as-is, even after signing a CLA.
+Approved external contributions first enter the private development
+source under sufficient additional licensing rights, then pass through
+pre-public and the normal release process.
 
-## Initial compatibility scope
+## Technical enforcement state
 
-FAIRINO FR5, Python SDK release `v2.2.8_robot_v3.9.8`, controller v3.9.8
-are the initial engineering targets, **not yet a tested support claim**.
-The interfaces should be extensible to new SDK versions/vendors as needs arise.
+`CODEOWNERS` and written policies do **not** prevent direct pushes,
+unreviewed merges, or unapproved PR sources. GitHub branch protection /
+rulesets and **required trusted promotion-provenance validation** must
+be added and tested separately. The intended validation must compare
+approved source identity and content hashes, not only branch names or
+a self-declared provenance file. Public GitHub Actions tokens do not
+automatically have read access to a separate private pre-public repo.
 
-## Merge protection
+Until enforcement is activated, maintainers must enforce this policy
+manually and must not claim that source gating is automated.
 
-The CODEOWNERS file requests maintainer code review. It **does not itself**
-enforce required review, CLA completion, or branch protection. GitHub
-rulesets / branch protections and CLA verification must be enabled separately.
+## Initial technical scope
+
+FAIRINO FR5 / SDK `v2.2.8_robot_v3.9.8` / controller v3.9.8.
+Support is planned, not yet physically tested.
